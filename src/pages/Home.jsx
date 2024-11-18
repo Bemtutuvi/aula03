@@ -1,8 +1,6 @@
 import {useEffect, useState} from "react";
 import ListaProdutos from "../components/ListaProdutos";
-
-export default function Home(){
-
+export default function App(){
 const [produtos, setProdutos] = useState([]);
 
 useEffect(()=>{
@@ -17,9 +15,18 @@ useEffect(()=>{
     }
     receberListaProdutos();
 },[]);
+if(ListaProdutos.lenght===0){
+    return<h1>Carregando...</h1>
+}
+
+const orderAZ= ()=>{
+    const ListaAux=[...Lista].filter((a,b)=> a.title.localeCompare(b.title));
+    setLista(ListaAux);
+}
 
 return(
     <>
+    <button onClick={()=>orderAZ}>AZ</button>
     <ListaProdutos produtos={produtos}/>
             </>
 );
