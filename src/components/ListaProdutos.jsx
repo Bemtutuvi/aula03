@@ -2,7 +2,7 @@ import styles from '../styles/listaProdutos.module.css'
 export default function ListaProdutos({ produtos }){
     return(
         <>
-        <header>
+        <div className={styles.cabecalho}>
             <h1>Roupas Marcelindo - Lindo</h1>
             <nav>
                 <ul>
@@ -11,7 +11,7 @@ export default function ListaProdutos({ produtos }){
                     <li>Blog</li>
                 </ul>
             </nav>
-        </header>
+        </div>
     <h1>Lista de Produtos</h1>
     <ul className={styles.blocoLista}>
         {produtos.map(produto=>(
